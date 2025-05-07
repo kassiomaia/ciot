@@ -6,6 +6,11 @@ Sistema desenvolvido em **ASP.NET Core 9** com frontend em **React + Vite**.
 
 ## Telas 
 
+![image](https://github.com/user-attachments/assets/33e79858-ca7d-495d-96ec-7c3d27d98c0f)
+
+![image](https://github.com/user-attachments/assets/88d38dc0-0aaf-456e-84c1-cffa55a3abcb)
+
+
 ---
 
 ## 📦 Estrutura do Projeto
