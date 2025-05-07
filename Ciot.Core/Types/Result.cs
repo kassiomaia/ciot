@@ -5,7 +5,7 @@ public class Result<TSuccessType, TErrorType>
     public TSuccessType Success { get; }
     public TErrorType? Error { get; }
     public bool IsSuccess => Success != null;
-    public bool IsError => Error != null;
+    public bool IsFailure => Error != null;
 
     private Result(TSuccessType success, TErrorType? error)
     {

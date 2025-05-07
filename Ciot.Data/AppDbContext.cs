@@ -3,63 +3,24 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ciot.Data;
 
-public class DbContent: DbContext
+public sealed class AppDbContext: DbContext
 {
     public DbSet<Device> Devices { get; set; }
     public DbSet<Operation> Operations { get; set; }
+    public DbSet<Parameter> Parameters { get; set; }
     public DbSet<User> Users { get; set; }
     
-    public DbContent(DbContextOptions<DbContent> options) : base(options)
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
+        ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+        ChangeTracker.AutoDetectChangesEnabled = false;
+        ChangeTracker.LazyLoadingEnabled = false;
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         
-        /*
-         * Configure Device entity
-         */
-
-        modelBuilder.Entity<Device>()
-            .HasKey(d => d.Id);
-        
-        modelBuilder.Entity<Device>()
-            .Property(d => d.Name)
-            .IsRequired()
-            .HasMaxLength(100);
-        
-        modelBuilder.Entity<Device>()
-            .HasMany(d => d.Operations)
-            .WithOne(o => o.Device)
-            .HasForeignKey(o => o.DeviceId)
-            .OnDelete(DeleteBehavior.Cascade);
-        
-        /*
-         * Configure Operation entity
-         */
-
-        modelBuilder.Entity<Operation>()
-            .HasKey(o => o.Id);
-        
-        modelBuilder.Entity<Operation>()
-            .Property(o => o.Name)
-            .IsRequired()
-            .HasMaxLength(100);
-
-        /*
-         * Configure User entity
-         */
-        
-        modelBuilder.Entity<User>()
-            .HasKey(u => u.Id);
-
-        modelBuilder.Entity<User>()
-            .Property(u => u.Name)
-            .IsRequired()
-            .HasMaxLength(100);
-
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
+        base.OnModelCreating(modelBuilder);
     }
 }

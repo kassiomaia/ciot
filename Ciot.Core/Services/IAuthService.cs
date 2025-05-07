@@ -1,8 +1,9 @@
 using Ciot.Core.Entities;
+using Ciot.Core.Types;
 
 namespace Ciot.Core.Services;
 
-public interface IAuthenticationService
+public interface IAuthService
 {
-    public Task<User?> AuthenticateAsync(string email, string password);
+    public Task<Result<User, string>> AuthenticateAsync(string email, string password);
 }

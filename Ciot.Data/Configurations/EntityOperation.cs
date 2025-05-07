@@ -4,20 +4,22 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ciot.Data.Configurations;
 
-public class EntityUser: IEntityTypeConfiguration<User>
+public class EntityOperation: IEntityTypeConfiguration<Operation>
 {
-    public void Configure(EntityTypeBuilder<User> builder)
+    public void Configure(EntityTypeBuilder<Operation> builder)
     {
         builder
-            .HasKey(u => u.Id);
-
+            .HasKey(o => o.Id);
+        
         builder
-            .Property(u => u.Name)
+            .Property(o => o.Name)
             .IsRequired()
             .HasMaxLength(100);
-
+        
         builder
-            .HasIndex(u => u.Email)
-            .IsUnique();
+            .HasOne(o => o.Device)
+            .WithMany(d => d.Operations)
+            .HasForeignKey(o => o.DeviceId)
+            .OnDelete(DeleteBehavior.Cascade);
     }
 }

@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Web\index.html">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+      <Content Update="App\index.html">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\assets\index-CgMYTDr4.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ciot.Application\Ciot.Application.csproj" />
+      <ProjectReference Include="..\Ciot.Core\Ciot.Core.csproj" />
+      <ProjectReference Include="..\Ciot.Data\Ciot.Data.csproj" />
+    </ItemGroup>
+
+</Project>

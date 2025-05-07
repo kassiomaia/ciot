@@ -1,6 +1,8 @@
+using Ciot.Core.Entities;
+
 namespace Ciot.Core.Repositories;
 
-public class IUserRepository
+public interface IUserRepository
 {
-    
+    public Task<User?> GetByEmailAsync(string email);
 }

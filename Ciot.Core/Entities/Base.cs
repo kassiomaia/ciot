@@ -1,6 +1,11 @@
 namespace Ciot.Core.Entities;
 
-public class EntityBase<T>
+public class Base<T>
 {
-    public T Id { get; set; } = default!;
+    public T Id { get; init; } = default!;
+    
+    protected Base(T id)
+    {
+        Id = id;
+    }
 }

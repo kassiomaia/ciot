@@ -1,6 +1,6 @@
 using Ciot.Core.Entities;
 
-namespace Ciot.Data.Seeds;
+namespace Ciot.Data.Configurations.Seeders;
 
 internal static class DeviceSeeder
 {
@@ -18,8 +18,20 @@ internal static class DeviceSeeder
                 "SN123456",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Cooling", "Cooling operation"),
-                    new(Guid.NewGuid(), "Heating", "Heating operation")
+                    new(Guid.NewGuid(), "Cooling", "Cooling operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Temperature setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Fan Speed", "Fan speed setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Mode", "Mode setting", ParameterType.String)
+                        }),
+                    new(Guid.NewGuid(), "Heating", "Heating operation",
+                        new List<Parameter>()
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Temperature setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Fan Speed", "Fan speed setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Mode", "Mode setting", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -32,7 +44,13 @@ internal static class DeviceSeeder
                 "SN654321",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Cooling", "Cooling operation")
+                    new(Guid.NewGuid(), "Cooling", "Cooling operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Temperature setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Fan Speed", "Fan speed setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Mode", "Mode setting", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -45,7 +63,13 @@ internal static class DeviceSeeder
                 "SN789012",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Washing", "Washing operation")
+                    new(Guid.NewGuid(), "Washing", "Washing operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Cycle", "Washing cycle", ParameterType.String),
+                            new(Guid.NewGuid(), "Temperature", "Washing temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Spin Speed", "Spin speed setting", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -58,7 +82,13 @@ internal static class DeviceSeeder
                 "SN345678",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Washing", "Washing operation")
+                    new(Guid.NewGuid(), "Washing", "Washing operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Cycle", "Washing cycle", ParameterType.String),
+                            new(Guid.NewGuid(), "Temperature", "Washing temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Spin Speed", "Spin speed setting", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -71,7 +101,12 @@ internal static class DeviceSeeder
                 "SN901234",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Heating", "Heating operation")
+                    new(Guid.NewGuid(), "Heating", "Heating operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Time", "Heating time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Power Level", "Power level setting", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -84,7 +119,12 @@ internal static class DeviceSeeder
                 "SN567890",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Boiling", "Boiling operation")
+                    new(Guid.NewGuid(), "Boiling", "Boiling operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Boiling temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Boiling time", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -97,7 +137,14 @@ internal static class DeviceSeeder
                 "SN123789",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Brewing", "Brewing operation")
+                    new(Guid.NewGuid(), "Brewing", "Brewing operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Brew Time", "Brewing time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Water Temperature", "Water temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Coffee Strength", "Coffee strength", ParameterType.String),
+                            new(Guid.NewGuid(), "Grind Size", "Grind size", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -110,7 +157,12 @@ internal static class DeviceSeeder
                 "SN456123",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Toasting", "Toasting operation")
+                    new(Guid.NewGuid(), "Toasting", "Toasting operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Toast Level", "Toast level setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Toasting time", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -123,7 +175,12 @@ internal static class DeviceSeeder
                 "SN789456",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Mixing", "Mixing operation")
+                    new(Guid.NewGuid(), "Mixing", "Mixing operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Speed", "Mixing speed", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Mixing time", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -136,7 +193,12 @@ internal static class DeviceSeeder
                 "SN123456",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Chopping", "Chopping operation")
+                    new(Guid.NewGuid(), "Chopping", "Chopping operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Speed", "Chopping speed", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Chopping time", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -149,7 +211,12 @@ internal static class DeviceSeeder
                 "SN654321",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Slow Cooking", "Slow cooking operation")
+                    new(Guid.NewGuid(), "Slow Cooking", "Slow cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -162,7 +229,13 @@ internal static class DeviceSeeder
                 "SN789012",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Pressure Cooking", "Pressure cooking operation")
+                    new(Guid.NewGuid(), "Pressure Cooking", "Pressure cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Pressure Level", "Pressure level setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -175,7 +248,13 @@ internal static class DeviceSeeder
                 "SN345678",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Rice Cooking", "Rice cooking operation")
+                    new(Guid.NewGuid(), "Rice Cooking", "Rice cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Water Level", "Water level setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Cooking Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -201,7 +280,13 @@ internal static class DeviceSeeder
                 "SN567890",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Air Frying", "Air frying operation")
+                    new(Guid.NewGuid(), "Air Frying", "Air frying operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Frying temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Frying time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -214,7 +299,13 @@ internal static class DeviceSeeder
                 "SN123789",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Skillet Cooking", "Skillet cooking operation")
+                    new(Guid.NewGuid(), "Skillet Cooking", "Skillet cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -227,7 +318,13 @@ internal static class DeviceSeeder
                 "SN456123",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Sous Vide Cooking", "Sous vide cooking operation")
+                    new(Guid.NewGuid(), "Sous Vide Cooking", "Sous vide cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -240,7 +337,13 @@ internal static class DeviceSeeder
                 "SN789456",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Induction Cooking", "Induction cooking operation")
+                    new(Guid.NewGuid(), "Induction Cooking", "Induction cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -253,7 +356,13 @@ internal static class DeviceSeeder
                 "SN123456",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Pressure Cooking", "Pressure cooking operation")
+                    new(Guid.NewGuid(), "Pressure Cooking", "Pressure cooking operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Pressure Level", "Pressure level setting", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Cooking time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Temperature", "Cooking temperature", ParameterType.Number)
+                        })
                 }
             ),
             new(
@@ -266,7 +375,13 @@ internal static class DeviceSeeder
                 "SN654321",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Steaming", "Steaming operation")
+                    new(Guid.NewGuid(), "Steaming", "Steaming operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Steaming temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Steaming time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             ),
             new(
@@ -279,7 +394,13 @@ internal static class DeviceSeeder
                 "SN789012",
                 new List<Operation>
                 {
-                    new(Guid.NewGuid(), "Griddling", "Griddling operation")
+                    new(Guid.NewGuid(), "Griddling", "Griddling operation",
+                        new List<Parameter>
+                        {
+                            new(Guid.NewGuid(), "Temperature", "Griddling temperature", ParameterType.Number),
+                            new(Guid.NewGuid(), "Time", "Griddling time", ParameterType.Number),
+                            new(Guid.NewGuid(), "Food Type", "Type of food", ParameterType.String)
+                        })
                 }
             )
         };

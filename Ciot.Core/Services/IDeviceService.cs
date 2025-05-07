@@ -1,6 +1,6 @@
 namespace Ciot.Core.Services;
 
-public class IDeviceService
+public interface IDeviceService
 {
-    
+    public Task<bool> ExecuteAsync(OperationRequest request);
 }

@@ -2,7 +2,7 @@ using Ciot.Core.Services;
 
 namespace Ciot.Application.Service;
 
-public class VerifyPasswordServiceService: IVerifyPasswordService
+public class VerifyPasswordService: IVerifyPasswordService
 {
     public Task<bool> VerifyAsync(string password, string hashedPassword)
     {

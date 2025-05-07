@@ -1,10 +1,11 @@
 using Ciot.Core.Entities;
+using Ciot.Data.Configurations.Seeders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ciot.Data.Configurations;
 
-internal class DeviceEntityConfig: IEntityTypeConfiguration<Device>
+internal class EntityDevice: IEntityTypeConfiguration<Device>
 {
     public void Configure(EntityTypeBuilder<Device> builder)
     {   

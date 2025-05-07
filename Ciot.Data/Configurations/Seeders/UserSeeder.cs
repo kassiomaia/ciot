@@ -1,6 +1,6 @@
 using Ciot.Core.Entities;
 
-namespace Ciot.Data.Seeds;
+namespace Ciot.Data.Configurations.Seeders;
 
 internal static class UserSeeder
 {
